@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - link "STATIC FORM, home" [ref=e11] [cursor=pointer]:
+          - /url: ./
+          - generic:
+            - paragraph: STATIC FORM
+        - generic [ref=e13]:
+          - paragraph [ref=e17]:
+            - link "AW26" [ref=e18] [cursor=pointer]:
+              - /url: ./
+          - paragraph [ref=e22]:
+            - link "SHOP" [ref=e23] [cursor=pointer]:
+              - /url: ./shop
+          - paragraph [ref=e27]:
+            - link "LOOKBOOK" [ref=e28] [cursor=pointer]:
+              - /url: ./lookbook
+          - paragraph [ref=e32]:
+            - link "ARCHIVE" [ref=e33] [cursor=pointer]:
+              - /url: ./archive
+          - paragraph [ref=e37]:
+            - link "ABOUT" [ref=e38] [cursor=pointer]:
+              - /url: ./about
+      - button "BAG (0), open bag" [ref=e41] [cursor=pointer]:
+        - generic [ref=e42]: BAG (0)
+    - region "AW26 runway" [ref=e45]
+    - generic:
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+    - generic:
+      - generic [aria-hidden]:
+        - generic:
+          - generic: STATIC FORM
+          - generic: AW26
+        - generic: STATIC FORM
+        - generic:
+          - generic: AUTUMN / WINTER 26
+          - generic: "000"
+  - generic:
+    - link "Create a free website with Framer, the website builder loved by startups, designers and agencies.":
+      - /url: https://www.framer.com
+      - paragraph [ref=e46] [cursor=pointer]: Create a free website with Framer, the website builder loved by startups, designers and agencies.

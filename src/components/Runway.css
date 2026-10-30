@@ -1,0 +1,947 @@
+.sfr {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - var(--sf-nav-h));
+  min-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--sf-ink);
+  color: var(--sf-bone);
+}
+
+.sfr .stage {
+  position: absolute;
+  inset: 0;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.sfr .stage:active {
+  cursor: grabbing;
+}
+
+/* Oversized serif numeral behind the meta column */
+.sfr .ghost {
+  position: absolute;
+  left: calc(var(--sf-pad) - 0.06em);
+  bottom: 40px;
+  z-index: 0;
+  color: var(--sf-surface);
+  pointer-events: none;
+  font-size: clamp(220px, 30vw, 440px);
+  line-height: 0.74;
+  letter-spacing: -0.04em;
+  font-style: normal;
+}
+
+.sfr {
+  --pd-w: 420px;
+  --slide-w: min(32vw, 480px);
+  --gap: 76px;
+  --rail-x: 43%;
+}
+
+/*
+  The rail is masked out behind the text column and fades in over a short
+  ramp, so a slide sliding past never shows through the headline.
+*/
+.sfr .rail-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  --mask-end: calc(var(--rail-x) * 0.8);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--mask-end) - 26px),
+    #000 calc(var(--mask-end) + 67px)
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--mask-end) - 26px),
+    #000 calc(var(--mask-end) + 67px)
+  );
+}
+
+/*
+  The whole rail slides as one unit. Each slide keeps a fixed left offset and
+  only the rail translates, so the motion is one continuous glide rather than
+  every slide animating its own position.
+*/
+.sfr .rail {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform: translate3d(calc(var(--i) * (var(--slide-w) + var(--gap)) * -1), 0, 0);
+  transition: transform 0.85s var(--sf-ease);
+}
+
+/*
+  Slides sit side by side: the current one on the left, the upcoming ones
+  peeking in from the right. --rel is 0 for the current slide, 1 and 2 for
+  the next two.
+*/
+.sfr .slide {
+  position: absolute;
+  top: 18px;
+  bottom: 86px;
+  left: calc(var(--rail-x) + var(--n) * (var(--slide-w) + var(--gap)));
+  width: var(--slide-w);
+  transform-origin: 50% 60%;
+  transition: opacity 0.6s var(--sf-ease);
+}
+
+.sfr .slide:not(.cur) {
+  cursor: pointer;
+}
+
+.sfr .slide:not(.cur):hover .dim {
+  opacity: 0.35 !important;
+}
+
+.sfr .clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--sf-surface);
+}
+
+.sfr .clip img {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+  pointer-events: none;
+  max-width: none;
+}
+
+.sfr .dim {
+  position: absolute;
+  inset: 0;
+  background: var(--sf-ink);
+  pointer-events: none;
+  transition: opacity 0.6s var(--sf-ease);
+}
+
+.sfr .sno {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 6px 10px;
+  background: var(--sf-ink);
+  color: var(--sf-bone);
+}
+
+/* Hotspots */
+.sfr .spots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* The active hotspot's rule runs past the image to the drawer */
+.sfr .slide.cur .spots {
+  overflow: visible;
+}
+
+.sfr .hs {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.sfr .slide:not(.cur) .hs {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sfr .hs-dot {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.sfr .hs-dot::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 1px solid var(--sf-bone);
+  background: var(--sf-ink-60);
+  border-radius: 50%;
+  transition: transform 0.6s var(--sf-ease), background 0.4s, border-color 0.4s;
+}
+
+.sfr .hs-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background: var(--sf-bone);
+  border-radius: 50%;
+}
+
+.sfr .hs:hover .hs-dot::before,
+.sfr .hs:focus-visible .hs-dot::before {
+  transform: scale(1.5);
+}
+
+.sfr .hs:active .hs-dot::before {
+  transform: scale(1.2);
+}
+
+.sfr .hs.on .hs-dot::before {
+  background: var(--sf-accent);
+  border-color: var(--sf-accent);
+  transform: scale(1.4);
+}
+
+/* The active dot fills solid, so the inner pip is hidden */
+.sfr .hs.on .hs-dot::after {
+  opacity: 0;
+}
+
+/*
+  Rule running from the active dot out to the drawer edge. It is drawn far
+  wider than needed and clipped by the slide, so it always reaches the panel.
+*/
+.sfr .connector {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vw;
+  height: 1px;
+  background: var(--sf-bone);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation: sfr-connect 0.5s var(--sf-ease) both;
+}
+
+@keyframes sfr-connect {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* The active label stays pinned open and reads solid */
+.sfr .hs.on .hs-label {
+  background: var(--sf-ink);
+}
+
+.sfr .hs-label {
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  background: var(--sf-ink-80);
+  padding: 5px 9px;
+  pointer-events: none;
+}
+
+.sfr .hs.left .hs-label {
+  left: auto;
+  right: 34px;
+  flex-direction: row-reverse;
+}
+
+.sfr .hs-label b {
+  font-weight: 500;
+}
+
+.sfr .hs-name {
+  display: block;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 0.7s var(--sf-ease), opacity 0.4s;
+}
+
+.sfr .hs:hover .hs-name,
+.sfr .hs:focus-visible .hs-name,
+.sfr .hs.on .hs-name {
+  max-width: 220px;
+  opacity: 1;
+}
+
+/* Meta column */
+.sfr .meta {
+  position: absolute;
+  z-index: 3;
+  left: var(--sf-pad);
+  top: 18px;
+  bottom: 86px;
+  width: min(34vw, 420px);
+  max-width: calc(100% - var(--sf-pad) * 2);
+  pointer-events: none;
+}
+
+/*
+  The spec line pins to the top; the title block is centred in the remaining
+  height, which is what puts the serif headline at mid-page.
+*/
+.sfr .meta-in {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+}
+
+.sfr .meta-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  min-height: 0;
+}
+
+.sfr .mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.sfr .mask-in {
+  display: block;
+  animation: sfr-rise 0.85s var(--sf-ease) both;
+}
+
+@keyframes sfr-rise {
+  from {
+    transform: translateY(108%);
+  }
+}
+
+.sfr h1 {
+  font-size: clamp(40px, 4.2vw, 62px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.sfr h1 .mask:nth-child(2) .mask-in {
+  animation-delay: 0.06s;
+}
+
+.sfr h1 .italic {
+  font-style: italic;
+}
+
+.sfr .note {
+  color: var(--sf-bone-60);
+  max-width: 34ch;
+}
+
+.sfr .note .mask-in {
+  animation-delay: 0.12s;
+}
+
+/* Item list */
+.sfr .items {
+  border-top: 1px solid var(--sf-line);
+  pointer-events: auto;
+  margin-top: 10px;
+}
+
+.sfr .item {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  border-bottom: 1px solid var(--sf-line);
+  transition: padding 0.6s var(--sf-ease), color 0.4s, background 0.3s;
+}
+
+.sfr .item:hover,
+.sfr .item.on {
+  padding-left: 8px;
+}
+
+.sfr .item:active {
+  opacity: 0.7;
+}
+
+.sfr .item.on .item-name {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Controls */
+.sfr .ctrl {
+  position: absolute;
+  z-index: 4;
+  left: var(--sf-pad);
+  right: var(--sf-pad);
+  bottom: 0;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sfr .ticks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sfr .ticks ul {
+  display: flex;
+  gap: 2px;
+}
+
+.sfr .tick {
+  position: relative;
+  width: 28px;
+  height: 44px;
+}
+
+.sfr .tick::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--sf-line-strong);
+  transition: background 0.4s, transform 0.5s var(--sf-ease);
+}
+
+.sfr .tick:hover::after {
+  background: var(--sf-bone-60);
+}
+
+.sfr .tick.on::after {
+  background: var(--sf-bone);
+  transform: scaleY(2);
+}
+
+.sfr .btns {
+  display: flex;
+  gap: 8px;
+}
+
+.sfr .prev {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--sf-line-strong);
+  transition: border-color 0.4s, opacity 0.4s, background 0.3s;
+}
+
+.sfr .prev:hover:not(:disabled) {
+  border-color: var(--sf-bone);
+  background: color-mix(in srgb, var(--sf-bone) 10%, transparent);
+}
+
+.sfr .prev:active:not(:disabled) {
+  opacity: 0.6;
+}
+
+.sfr .prev:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.sfr .next {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 44px;
+  padding: 0 20px;
+  background: var(--sf-bone);
+  color: var(--sf-ink);
+  transition: opacity 0.2s, background 0.3s;
+}
+
+.sfr .next:hover {
+  background: color-mix(in srgb, var(--sf-bone) 88%, var(--sf-ink));
+}
+
+.sfr .next:active {
+  opacity: 0.78;
+}
+
+.sfr .next svg {
+  transition: transform 0.6s var(--sf-ease);
+}
+
+.sfr .next:hover svg,
+.sfr .next:focus-visible svg {
+  transform: translateX(6px);
+}
+
+/* Product drawer */
+.sfr .pd {
+  position: absolute;
+  z-index: 40;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--pd-w);
+  display: flex;
+  flex-direction: column;
+  background: var(--sf-ink);
+  animation: sfr-slide-in 0.55s var(--sf-ease) both;
+}
+
+@keyframes sfr-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+.sfr .pd.side {
+  border-left: 1px solid var(--sf-line-strong);
+}
+
+.sfr .pd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px 6px 24px;
+  min-height: 56px;
+  border-bottom: 1px solid var(--sf-line);
+}
+
+.sfr .ib {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  transition: background 0.3s, opacity 0.2s;
+}
+
+.sfr .ib:hover {
+  background: color-mix(in srgb, var(--sf-bone) 10%, transparent);
+}
+
+.sfr .ib:active {
+  opacity: 0.6;
+}
+
+.sfr .pd-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 24px;
+}
+
+.sfr .pd-crop {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: var(--sf-surface);
+  border: 1px solid var(--sf-line);
+  margin-bottom: 22px;
+}
+
+.sfr .pd-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.sfr .crop-tag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--sf-ink);
+  padding: 5px 10px;
+}
+
+.sfr .pd-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sfr .pd-name {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.sfr .pd-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.sfr .swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--sf-line-strong);
+  flex: none;
+}
+
+.sfr .pd-desc {
+  margin-top: 18px;
+  color: var(--sf-bone-60);
+  max-width: 44ch;
+}
+
+/* Other pieces in the same look */
+.sfr .pd-more {
+  margin-top: 26px;
+}
+
+.sfr .pd-more ul {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sfr .chip {
+  display: grid;
+  gap: 6px;
+  width: 78px;
+  text-align: left;
+  border: 1px solid transparent;
+  padding: 3px;
+  transition: border-color 0.4s;
+}
+
+.sfr .chip img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--sf-surface);
+}
+
+.sfr .chip span {
+  font-size: 9.5px;
+  line-height: 1.25;
+  color: var(--sf-bone-60);
+}
+
+.sfr .chip:hover {
+  border-color: var(--sf-line-strong);
+}
+
+.sfr .chip.on {
+  border-color: var(--sf-bone);
+}
+
+.sfr .chip.on span {
+  color: var(--sf-bone);
+}
+
+/* Registration cross on the drawer image */
+.sfr .cross {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  pointer-events: none;
+}
+
+.sfr .cross::before,
+.sfr .cross::after {
+  content: '';
+  position: absolute;
+  background: var(--sf-bone);
+}
+
+.sfr .cross::before {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.sfr .cross::after {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.sfr fieldset {
+  border: 0;
+  padding: 0;
+  margin: 22px 0 0;
+  min-width: 0;
+}
+
+.sfr legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.sfr .sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sfr .size {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--sf-line-strong);
+  font-family: var(--sf-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  transition: background 0.4s var(--sf-ease), color 0.4s, border-color 0.4s, opacity 0.2s;
+}
+
+.sfr .size:hover:not(:disabled) {
+  border-color: var(--sf-bone);
+  background: color-mix(in srgb, var(--sf-bone) 12%, transparent);
+}
+
+.sfr .size:active:not(:disabled) {
+  opacity: 0.7;
+}
+
+.sfr .size.on {
+  background: var(--sf-bone);
+  color: var(--sf-ink);
+  border-color: var(--sf-bone);
+}
+
+.sfr .size:disabled {
+  opacity: 0.35;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.sfr .pd-foot {
+  padding: 14px 24px 18px;
+  border-top: 1px solid var(--sf-line);
+  display: grid;
+  gap: 4px;
+}
+
+.sfr .btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--sf-bone);
+  background: var(--sf-bone);
+  color: var(--sf-ink);
+  font-family: var(--sf-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.5s var(--sf-ease), opacity 0.2s;
+}
+
+.sfr .btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--sf-ink);
+  z-index: -1;
+  transform: translateY(101%);
+  transition: transform 0.55s var(--sf-ease);
+}
+
+.sfr .btn:hover:not(:disabled)::before {
+  transform: none;
+}
+
+.sfr .btn:hover:not(:disabled) {
+  color: var(--sf-bone);
+}
+
+.sfr .btn:active:not(:disabled) {
+  opacity: 0.78;
+}
+
+.sfr .btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sfr .full {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  justify-self: start;
+}
+
+.sfr .full:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Tablet: narrow the meta column, let slides take the right half */
+@media (max-width: 1099px) {
+  .sfr {
+    --slide-w: min(46vw, 420px);
+    --gap: 40px;
+    --rail-x: 352px;
+  }
+
+  .sfr .meta {
+    width: 320px;
+  }
+}
+
+/*
+  Phone: the image becomes the backdrop and the meta column sits on top of it,
+  so the look still reads at 390px wide.
+*/
+@media (max-width: 809px) {
+  .sfr {
+    height: auto;
+    min-height: 0;
+  }
+
+  .sfr .stage {
+    position: relative;
+    inset: auto;
+    display: grid;
+  }
+
+  .sfr .ghost {
+    font-size: 160px;
+    bottom: auto;
+    top: 0;
+  }
+
+  .sfr .rail-mask {
+    position: relative;
+    inset: auto;
+    height: 72svh;
+    min-height: 420px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  /* Stacked and cross-faded; the rail does not translate at this width */
+  .sfr .rail {
+    transform: none;
+  }
+
+  .sfr .slide {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sfr .slide.cur {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sfr .meta {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: none;
+    padding: 18px var(--sf-pad) 0;
+  }
+
+  .sfr .meta-in {
+    gap: 14px;
+  }
+
+  .sfr h1 {
+    font-size: 34px;
+  }
+
+  .sfr .items {
+    margin-top: 4px;
+  }
+
+  .sfr .ctrl {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: auto;
+    padding: 18px var(--sf-pad) 24px;
+  }
+
+  .sfr .ticks ul {
+    display: none;
+  }
+
+  /* Drawer becomes a bottom sheet */
+  .sfr .pd {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    max-height: 88svh;
+    border-left: 0;
+    border-top: 1px solid var(--sf-line-strong);
+    animation-name: sfr-sheet-in;
+  }
+
+  @keyframes sfr-sheet-in {
+    from {
+      transform: translateY(100%);
+    }
+  }
+
+  .sfr .pd-head {
+    padding-left: 16px;
+  }
+
+  .sfr .pd-body {
+    padding: 14px 16px 12px;
+  }
+
+  .sfr .pd-name {
+    font-size: 24px;
+  }
+
+  .sfr .pd-desc {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  .sfr .pd-foot {
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+}

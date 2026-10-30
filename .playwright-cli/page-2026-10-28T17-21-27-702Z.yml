@@ -1,0 +1,182 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - link "STATIC FORM, home" [ref=e11] [cursor=pointer]:
+          - /url: ./
+          - generic:
+            - paragraph: STATIC FORM
+        - generic [ref=e13]:
+          - paragraph [ref=e17]:
+            - link "AW26" [ref=e18] [cursor=pointer]:
+              - /url: ./
+          - paragraph [ref=e22]:
+            - link "SHOP" [ref=e23] [cursor=pointer]:
+              - /url: ./shop
+          - paragraph [ref=e27]:
+            - link "LOOKBOOK" [ref=e28] [cursor=pointer]:
+              - /url: ./lookbook
+          - paragraph [ref=e32]:
+            - link "ARCHIVE" [ref=e33] [cursor=pointer]:
+              - /url: ./archive
+          - paragraph [ref=e37]:
+            - link "ABOUT" [ref=e38] [cursor=pointer]:
+              - /url: ./about
+      - button "BAG (0), open bag" [ref=e41] [cursor=pointer]:
+        - generic [ref=e42]: BAG (0)
+    - region "AW26 runway" [ref=e45]:
+      - generic [ref=e46]:
+        - generic [aria-hidden]: "01"
+        - generic [ref=e49]:
+          - figure [ref=e50]:
+            - generic [ref=e51]:
+              - 'img "Look 01: Raw wool, held at the shoulder"'
+              - generic [aria-hidden] [ref=e52]: "01"
+            - generic:
+              - button "01 Raw Wool Coat, Charcoal, open details" [ref=e53] [cursor=pointer]:
+                - generic:
+                  - generic: "01"
+                  - generic: Raw Wool Coat
+              - button "02 Soft Knit 02, Oatmeal, open details" [ref=e55] [cursor=pointer]:
+                - generic:
+                  - generic: "02"
+                  - generic: Soft Knit 02
+              - button "03 Fold Trouser, Off-black, open details" [ref=e57] [cursor=pointer]:
+                - generic:
+                  - generic: "03"
+                  - generic: Fold Trouser
+          - figure [ref=e59] [cursor=pointer]:
+            - generic [ref=e60]:
+              - 'img "Look 02: Long line, no ceremony"'
+              - generic [aria-hidden] [ref=e61]: "02"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+              - button:
+                - generic: "03"
+              - button:
+                - generic: "04"
+          - figure [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]:
+              - 'img "Look 03: One shirt, built like a wall"'
+              - generic [aria-hidden] [ref=e64]: "03"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+          - figure [ref=e65] [cursor=pointer]:
+            - generic [ref=e66]:
+              - 'img "Look 04: Work jacket, side on"'
+              - generic [aria-hidden] [ref=e67]: "04"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+              - button:
+                - generic: "03"
+          - figure [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]:
+              - 'img "Look 05: Rib over black, stone on charcoal"'
+              - generic [aria-hidden] [ref=e70]: "05"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+          - figure [ref=e71] [cursor=pointer]:
+            - generic [ref=e72]:
+              - 'img "Look 06: Two tees, one long scarf"'
+              - generic [aria-hidden] [ref=e73]: "06"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+              - button:
+                - generic: "03"
+          - figure [ref=e74] [cursor=pointer]:
+            - generic [ref=e75]:
+              - 'img "Look 07: Closed coat, one small object"'
+              - generic [aria-hidden] [ref=e76]: "07"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+          - figure [ref=e77] [cursor=pointer]:
+            - generic [ref=e78]:
+              - 'img "Look 08: All black, hard light"'
+              - generic [aria-hidden] [ref=e79]: "08"
+            - generic [aria-hidden]:
+              - button:
+                - generic: "01"
+              - button:
+                - generic: "02"
+              - button:
+                - generic: "03"
+        - generic:
+          - generic:
+            - generic: LOOK 01 / WOOL COAT 04 / CHARCOAL / €420
+            - heading "Raw wool, held at the shoulder" [level=1]:
+              - generic: Raw wool,
+              - generic:
+                - generic:
+                  - emphasis: held at the shoulder
+            - generic: The opening look. A coat that keeps its weight, over a soft rib and a wide fold.
+            - list [ref=e80]:
+              - listitem [ref=e81]:
+                - button "01 Raw Wool Coat €420" [ref=e82] [cursor=pointer]:
+                  - generic [ref=e83]: "01"
+                  - generic [ref=e84]: Raw Wool Coat
+                  - generic [ref=e85]: €420
+              - listitem [ref=e86]:
+                - button "02 Soft Knit 02 €190" [ref=e87] [cursor=pointer]:
+                  - generic [ref=e88]: "02"
+                  - generic [ref=e89]: Soft Knit 02
+                  - generic [ref=e90]: €190
+              - listitem [ref=e91]:
+                - button "03 Fold Trouser €210" [ref=e92] [cursor=pointer]:
+                  - generic [ref=e93]: "03"
+                  - generic [ref=e94]: Fold Trouser
+                  - generic [ref=e95]: €210
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: 01 / 08
+            - tablist "Looks" [ref=e99]:
+              - listitem [ref=e100]:
+                - tab "Go to look 01" [selected] [ref=e101] [cursor=pointer]
+              - listitem [ref=e102]:
+                - tab "Go to look 02" [ref=e103] [cursor=pointer]
+              - listitem [ref=e104]:
+                - tab "Go to look 03" [ref=e105] [cursor=pointer]
+              - listitem [ref=e106]:
+                - tab "Go to look 04" [ref=e107] [cursor=pointer]
+              - listitem [ref=e108]:
+                - tab "Go to look 05" [ref=e109] [cursor=pointer]
+              - listitem [ref=e110]:
+                - tab "Go to look 06" [ref=e111] [cursor=pointer]
+              - listitem [ref=e112]:
+                - tab "Go to look 07" [ref=e113] [cursor=pointer]
+              - listitem [ref=e114]:
+                - tab "Go to look 08" [ref=e115] [cursor=pointer]
+          - generic [ref=e116]:
+            - button "Previous look" [disabled] [ref=e117]
+            - button "NEXT LOOK" [ref=e120] [cursor=pointer]
+    - generic:
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+      - generic:
+        - paragraph: Aa
+  - link [ref=e124] [cursor=pointer]:
+    - /url: https://www.framer.com
+    - paragraph [ref=e129]: Create a free website with Framer, the website builder loved by startups, designers and agencies.
