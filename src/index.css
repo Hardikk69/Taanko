@@ -1,104 +1,83 @@
+@import 'tailwindcss';
+
 /* Design tokens — Taanko Logo Colors */
-:root {
-  --sf-ink: #F5F5DC;
-  --sf-bone: #844A34;
-  --sf-muted: #915F4E;
-  --sf-surface: #EBE7CE;
-  --sf-accent: #FF334E;
-  --sf-accent-coral: #FF334E;
-  --sf-accent-pink: #FF57E9;
-  --sf-accent-green: #4AAE3D;
-  --sf-brand-brown: #844A34;
+@theme {
+  --color-ink: #f5f5dc;
+  --color-bone: #844a34;
+  --color-muted: #915f4e;
+  --color-surface: #ebe7ce;
+  /* Taanko logo palette. Coral leads; green and pink are secondary signals. */
+  --color-accent: #ff334e;
+  --color-coral: #ff334e;
+  --color-pink: #ff57e9;
+  --color-green: #4aae3d;
 
-  --sf-ink-60: color-mix(in srgb, var(--sf-ink) 60%, transparent);
-  --sf-ink-80: color-mix(in srgb, var(--sf-ink) 80%, transparent);
-  --sf-bone-60: color-mix(in srgb, var(--sf-bone) 65%, transparent);
-  --sf-line: color-mix(in srgb, var(--sf-bone) 18%, transparent);
-  --sf-line-strong: color-mix(in srgb, var(--sf-bone) 36%, transparent);
+  --color-coral-12: color-mix(in srgb, var(--color-coral) 12%, transparent);
+  --color-pink-12: color-mix(in srgb, var(--color-pink) 12%, transparent);
+  --color-green-12: color-mix(in srgb, var(--color-green) 12%, transparent);
 
-  --sf-font-sans: Geist, system-ui, sans-serif;
-  --sf-font-mono: 'Geist Mono', ui-monospace, monospace;
-  --sf-font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  /* The logo colors are tuned for a mark, not for text: all three fall under
+     3.3:1 on the cream ground. Use the pure hues for fills, dots and rules;
+     use these darkened variants wherever the color carries type (>=4.5:1). */
+  --color-coral-ink: #d32a40;
+  --color-green-ink: #357d2b;
+  --color-pink-ink: #b53da5;
 
-  --sf-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --color-ink-60: color-mix(in srgb, var(--color-ink) 60%, transparent);
+  --color-ink-80: color-mix(in srgb, var(--color-ink) 80%, transparent);
+  --color-bone-60: color-mix(in srgb, var(--color-bone) 65%, transparent);
+  --color-bone-10: color-mix(in srgb, var(--color-bone) 10%, transparent);
+  --color-bone-12: color-mix(in srgb, var(--color-bone) 12%, transparent);
+  --color-bone-88: color-mix(in srgb, var(--color-bone) 88%, var(--color-ink));
+  --color-bone-85: color-mix(in srgb, var(--color-bone) 85%, var(--color-ink));
+  --color-line: color-mix(in srgb, var(--color-bone) 18%, transparent);
+  --color-line-strong: color-mix(in srgb, var(--color-bone) 36%, transparent);
 
-  --sf-pad: 36px;
-  --sf-nav-h: 70px;
+  --font-sans: Geist, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
 
-  color-scheme: light;
-}
+  --ease-sf: cubic-bezier(0.16, 1, 0.3, 1);
 
-@media (max-width: 809px) {
-  :root {
-    --sf-pad: 16px;
-    --sf-nav-h: 58px;
+  /* Matches the former max-width: 809px / 1099px breakpoints. */
+  --breakpoint-md: 810px;
+  --breakpoint-lg: 1100px;
+
+  --animate-rise: sfr-rise 0.85s var(--ease-sf) both;
+  --animate-connect: sfr-connect 0.5s var(--ease-sf) both;
+  --animate-slide-in: sfr-slide-in 0.55s var(--ease-sf) both;
+  --animate-sheet-in: sfr-sheet-in 0.55s var(--ease-sf) both;
+
+  @keyframes sfr-rise {
+    from {
+      transform: translateY(108%);
+    }
   }
+
+  @keyframes sfr-connect {
+    from {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes sfr-slide-in {
+    from {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes sfr-sheet-in {
+    from {
+      transform: translateY(100%);
+    }
+  }
+
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--sf-ink);
-  color: var(--sf-bone);
-}
-
-body {
-  font-family: var(--sf-font-sans);
-  font-size: 15px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-h1,
-h2,
-h3,
-p,
-ul,
-figure {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-:focus-visible {
-  outline: 1px solid var(--sf-bone);
-  outline-offset: 3px;
-}
-
-/* Shared type helpers */
-.mono {
-  font-family: var(--sf-font-mono);
+/* The uppercase mono label used all over the UI. */
+@utility mono {
+  font-family: var(--font-mono);
   font-size: 11px;
   line-height: 1.4;
   letter-spacing: 0.08em;
@@ -106,45 +85,40 @@ img {
   font-weight: 400;
 }
 
-.mono-m {
-  font-size: 12px;
-}
+@layer base {
+  html,
+  body {
+    background: var(--color-ink);
+    color: var(--color-bone);
+  }
 
-.muted {
-  color: var(--sf-muted);
-}
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 
-.serif {
-  font-family: var(--sf-font-serif);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
+  p {
+    text-wrap: pretty;
+  }
 
-.sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-.skip {
-  position: absolute;
-  left: var(--sf-pad);
-  top: -100px;
-  z-index: 100;
-  background: var(--sf-bone);
-  color: var(--sf-ink);
-  padding: 10px 16px;
-  transition: top 0.2s;
-}
+  body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+  }
 
-.skip:focus {
-  top: 10px;
+  :focus-visible {
+    outline: 1px solid var(--color-bone);
+    outline-offset: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
