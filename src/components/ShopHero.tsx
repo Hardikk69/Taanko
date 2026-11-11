@@ -1,111 +1,65 @@
 import { looks, products } from '../data'
 
-export type ShopHeroProps = {
-  season?: string
-  plate?: string
-  titleTop?: string
-  titleBottom?: string
-  image?: string
-  imageAlt?: string
-  body?: string
-}
-
-const prices = products.map((p) => p.price)
-const RANGE = ['£' + Math.min(...prices), '£' + Math.max(...prices)]
-
-/** Category index with live counts, in first-seen order. */
-const INDEX = [...new Set(products.map((p) => p.category))].map((c) => ({
-  name: c.toUpperCase(),
-  count: products.filter((p) => p.category === c).length,
-}))
-
+/**
+ * Centered editorial hero: serif kicker, large uppercase title, then a wide
+ * figure plate. The previous wordmark/cut-out hero now runs on the About
+ * page; the older index-style hero lives in src/archive/ShopHeroIndex.tsx.
+ */
 const pad = (n: number) => String(n).padStart(2, '0')
 
-/** Natural pixel size of the look plates in public/images. */
-const IMAGE_W = 1024
-const IMAGE_H = 1536
-
-const DISPLAY =
-  'block text-[clamp(52px,13vw,132px)] leading-[0.82] font-normal tracking-[-0.045em] text-bone uppercase'
-
-export default function ShopHero({
-  season = 'AW26 / INDEX',
-  plate = 'PLATE 01',
-  titleTop = 'SHOP',
-  titleBottom = 'ALL',
-  image = looks[0].image,
-  imageAlt = 'AW26 campaign plate',
-  body = 'Raw wool, washed canvas, heavy rib. Cut in limited runs and restocked only when the cloth allows.',
-}: ShopHeroProps) {
+export default function ShopHero() {
   return (
-    <header className="grid border-b border-line bg-ink md:min-h-[68svh] md:grid-cols-[auto_1fr]">
-      {/*
-        Campaign plate. The source files are 1024x1536, so the frame is pinned
-        to 2/3 and capped by height — it is never upscaled past its own pixels.
-      */}
-      <div className="flex items-center justify-center px-4 pt-6 pb-2 md:border-r md:border-line md:p-8">
-        <figure className="relative aspect-[2/3] w-full max-w-[200px] overflow-hidden bg-surface md:max-h-[54svh] md:max-w-[280px]">
-          <img
-            src={image}
-            alt={imageAlt}
-            width={IMAGE_W}
-            height={IMAGE_H}
-            loading="eager"
-            decoding="async"
-            draggable={false}
-            className="h-full w-full object-cover object-[50%_22%]"
-          />
-          <figcaption className="mono absolute bottom-0 left-0 bg-ink px-3 py-2">
-            {plate} / {season.split(' ')[0]}
-          </figcaption>
-        </figure>
+    <header className="px-4 md:px-9" aria-labelledby="shop-title">
+      {/* Top strip */}
+      <div className="flex items-end justify-between gap-6 border-b border-line pt-10 pb-3 md:pt-16">
+        <span className="mono text-coral-ink">TAANKO / SHOP</span>
+        <span className="mono text-green-ink">AW26 — {pad(products.length)} PIECES</span>
       </div>
 
-      {/* Type stack */}
-      <div className="flex flex-col justify-between gap-8 px-4 py-6 md:gap-10 md:px-9 md:py-9">
-        <div className="mono flex items-center justify-between gap-4 text-muted">
-          <span>{season}</span>
-          <span>{pad(products.length)} PIECES</span>
-        </div>
-
-        <h1>
-          <span className="sr-only">
-            {titleTop} {titleBottom}
-          </span>
-          <span aria-hidden="true" className={DISPLAY}>
-            {titleTop}
-          </span>
-          <span aria-hidden="true" className={DISPLAY + ' text-accent'}>
-            {titleBottom}
-          </span>
+      <div className="mt-12 text-center md:mt-20">
+        <p className="font-serif text-[clamp(22px,4vw,44px)] leading-none text-pink-ink italic">
+          to stitch with thread
+        </p>
+        <h1
+          id="shop-title"
+          className="mx-auto -mt-[0.05em] max-w-[14ch] text-[clamp(40px,11vw,148px)] leading-[0.88] font-normal tracking-[-0.04em] text-bone uppercase"
+        >
+          The AW26 collection
         </h1>
+        <p className="mx-auto mt-6 max-w-[48ch] text-[16px] leading-[1.7] text-muted">
+          Hand embroidered, one frame at a time. Clothing, totes, purses and small objects, made in short runs
+          from one London workroom.
+        </p>
 
-        {/* Numbered category index with live counts. */}
-        <ul className="border-t border-line">
-          {INDEX.map((c, n) => (
-            <li
-              key={c.name}
-              className="mono grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 border-b border-line py-2.5 text-bone-60 transition-colors duration-300 ease-sf hover:text-bone"
-            >
-              <span className="text-muted">{pad(n + 1)}</span>
-              <span className="tracking-[0.12em]">{c.name}</span>
-              <span>{pad(c.count)}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-wrap items-end justify-between gap-5">
-          <p className="mono max-w-[38ch] leading-[1.7] tracking-[0.01em] text-muted normal-case">
-            {body}
-          </p>
-          <p className="shrink-0">
-            <span className="mono block text-muted">RANGE</span>
-            <span className="font-mono text-[clamp(20px,3vw,32px)] leading-none tracking-[-0.02em]">
-              {RANGE[0]} — {RANGE[1]}
-            </span>
-          </p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#grid"
+            className="mono inline-flex min-h-11 items-center rounded-full bg-bone px-6 text-ink transition-[transform,background-color] duration-300 ease-sf hover:bg-accent active:scale-[0.97]"
+          >
+            SHOP NOW →
+          </a>
+          <a
+            href="/lookbook"
+            className="mono inline-flex min-h-11 items-center rounded-full border border-bone/40 px-6 transition-colors duration-300 ease-sf hover:border-bone"
+          >
+            EXPLORE THE LOOKBOOK
+          </a>
         </div>
       </div>
+
+      <figure className="reveal relative mt-12 overflow-hidden rounded-xl bg-surface shadow-lift md:mt-20">
+        <img
+          src={looks[3].image}
+          alt="Sashiko work jacket and wool trousers, a crossbody pouch slung behind"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="aspect-[4/5] w-full object-cover md:aspect-[21/9]"
+        />
+        <figcaption className="mono absolute bottom-4 left-4 rounded-full bg-ink/85 px-3.5 py-1.5 backdrop-blur-sm md:bottom-6 md:left-6">
+          ALL THREAD, HARD LIGHT
+        </figcaption>
+      </figure>
     </header>
   )
 }

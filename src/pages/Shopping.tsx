@@ -23,7 +23,7 @@ export function selectProducts(all: Product[], category: string, sort: SortKey) 
 }
 
 const PILL =
-  'mono inline-flex min-h-9 items-center border px-3.5 transition-[color,background-color,border-color] duration-300 ease-sf'
+  'mono inline-flex min-h-9 items-center rounded-full border px-4 transition-[color,background-color,border-color] duration-300 ease-sf'
 
 export default function Shopping() {
   const [category, setCategory] = useState('ALL')
@@ -93,7 +93,7 @@ export default function Shopping() {
               return (
                 <li key={p.slug}>
                   <a className="group grid gap-1.5" href={`/product/${p.slug}`}>
-                    <div className="relative mb-1.5 aspect-[4/5] overflow-hidden bg-surface">
+                    <div className="relative mb-1.5 aspect-[4/5] overflow-hidden rounded-lg bg-surface shadow-soft transition-shadow duration-500 ease-sf group-hover:shadow-lift">
                       <img
                         src={p.image}
                         alt={p.name}
@@ -101,11 +101,11 @@ export default function Shopping() {
                         decoding="async"
                         className="h-full w-full object-cover object-[50%_18%] transition-transform duration-[900ms] ease-sf group-hover:scale-[1.04] group-focus-visible:scale-[1.04]"
                       />
-                      <span className="mono absolute top-0 left-0 bg-ink px-2.5 py-1.5">
+                      <span className="mono absolute top-2.5 left-2.5 rounded-full bg-ink/90 px-2.5 py-1 backdrop-blur-sm">
                         {p.sku}
                       </span>
                       {out && (
-                        <span className="mono absolute right-0 bottom-0 bg-bone px-2.5 py-1.5 text-ink">
+                        <span className="mono absolute right-2.5 bottom-2.5 rounded-full bg-bone px-2.5 py-1 text-ink">
                           SOLD OUT
                         </span>
                       )}
@@ -120,7 +120,7 @@ export default function Shopping() {
 
                     <div className="flex items-center gap-2">
                       <span
-                        className="inline-block size-3 flex-none border border-line-strong"
+                        className="inline-block size-3 flex-none rounded-full border border-line-strong"
                         style={{ background: toneSwatch[p.tone] }}
                       />
                       <span className="mono text-muted">

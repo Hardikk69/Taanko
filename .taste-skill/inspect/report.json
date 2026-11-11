@@ -1,0 +1,1709 @@
+{
+ "url": "http://localhost:5199/product/raw-wool-coat",
+ "at": "2026-11-05T03:54:49.509Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.68,
+    0.43,
+    0.56
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 2485,
+     "screens": 2.8,
+     "words": 110,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "rd7ybe0UgMSoS4c5qcBe2OEIBsY.webp",
+      "sqpF5doNREx0lIFgsHEBZ8KS6g.webp",
+      "hMJqoN9zq5KtuJS87g68qfuvWY.webp",
+      "oEDPtt9Kxi8fPaeYC2wNEDf8w.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "chars": 22,
+     "lines": 2,
+     "size": 104,
+     "vw": 7.2,
+     "font": "Geist",
+     "weight": 400,
+     "tracking": -0.045,
+     "leading": 0.86,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.46,
+     "top": 240,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "lines": 2,
+     "size": 104,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 104,
+      "vw": 7.2,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.045,
+      "leading": 0.86,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 240,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "£240",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Geist Mono",
+      "weight": 400,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.08,
+      "top": 577,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Made to order, on the frame",
+      "words": 6,
+      "chars": 27,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.66,
+      "top": 1008,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MORE CLOTHING",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1398,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Taanko",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 112,
+      "vw": 7.8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.18,
+      "top": 2203,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.48,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.46,
+       "mono": true
+      },
+      {
+       "family": "Instrument Serif",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      15,
+      19,
+      26,
+      40,
+      52,
+      64,
+      104,
+      112
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 19,
+      "leading": 1.75,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 56,
+     "max": {
+      "size": 112,
+      "vw": 7.8,
+      "font": "Instrument Serif",
+      "text": "Taanko"
+     },
+     "monoShare": 0.46,
+     "monoProseShare": 0.46,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [
+      "SKIP TO CONTENT",
+      "AW26",
+      "SHOP",
+      "CUSTOM ORDER",
+      "ABOUT",
+      "JOURNAL"
+     ],
+     "microLabels": 20,
+     "microLabelShare": 0.28,
+     "microSamples": [
+      "TK-AW26-CL-04",
+      "INDIGO THREAD",
+      "OVERSHIRT 04",
+      "SIZE",
+      "CATEGORY",
+      "CLOTHING"
+     ],
+     "upperShare": 0.51,
+     "centerShare": 0.04,
+     "smallText": 10
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f5f5dc",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.56,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ebe7ce",
+       "top": 50,
+       "hsl": {
+        "h": 52,
+        "s": 0.42,
+        "l": 0.86
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#844a34",
+       "share": 0.71
+      },
+      {
+       "color": "#915f4e",
+       "share": 0.18
+      },
+      {
+       "color": "#f5f5dc",
+       "share": 0.08
+      },
+      {
+       "color": "#b53da5",
+       "share": 0.01
+      },
+      {
+       "color": "#d32a40",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#844a34",
+      "hsl": {
+       "h": 17,
+       "s": 0.43,
+       "l": 0.36
+      },
+      "fg": "#f5f5dc"
+     },
+     "lowContrast": [
+      {
+       "text": "SELECT A SIZE",
+       "ratio": 3.3,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#f5f5dc",
+       "bg": "#ff334e"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 35,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 3,
+     "upper": 3,
+     "heroLabels": [
+      "SKIP TO CONTENT",
+      "BAG 0"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 4,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "a.mono.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 11,
+     "hairlineSamples": [
+      "header.grid.border-b 1440px",
+      "div.flex.items-stretch 702px",
+      "dl.mono.w-full 352px",
+      "div.grid.grid-cols-[1fr_auto] 352px",
+      "div.grid.grid-cols-[1fr_auto] 352px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 3,
+     "roundedBoxes": 4,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 3,
+     "mediaRadius": 16,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.46
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono",
+     "instrument serif"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 2485,
+    "margins": {
+     "left": 36,
+     "right": 36
+    },
+    "sections": [
+     {
+      "sel": "main#main.pt-[46px].md:pt-[50px]",
+      "tag": "main",
+      "top": 0,
+      "height": 2146,
+      "words": 69,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Chain-Stitch Overshirt",
+       "size": 104,
+       "tag": "h1"
+      },
+      "left": 36,
+      "right": 0,
+      "textLeft": 36,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-line",
+      "tag": "footer",
+      "top": 2146,
+      "height": 339,
+      "words": 25,
+      "media": 0,
+      "middle": 390,
+      "heading": {
+       "text": "Taanko",
+       "size": 112,
+       "tag": "p"
+      },
+      "left": 36,
+      "right": 36,
+      "textLeft": 36,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "size": 104,
+      "top": 240,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 36,
+      "n": 4
+     },
+     {
+      "x": 224,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.08,
+    "voidBox": {
+     "x": 180,
+     "y": 480,
+     "w": 360,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.73,
+    0.45,
+    0.69,
+    0.35
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3630,
+     "screens": 3.5,
+     "words": 106,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "rd7ybe0UgMSoS4c5qcBe2OEIBsY.webp",
+      "sqpF5doNREx0lIFgsHEBZ8KS6g.webp",
+      "hMJqoN9zq5KtuJS87g68qfuvWY.webp",
+      "oEDPtt9Kxi8fPaeYC2wNEDf8w.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "chars": 22,
+     "lines": 2,
+     "size": 69.1,
+     "vw": 9,
+     "font": "Geist",
+     "weight": 400,
+     "tracking": -0.045,
+     "leading": 0.86,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 117,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "lines": 2,
+     "size": 69.1,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "Taanko",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.1,
+      "top": 22,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.045,
+      "leading": 0.86,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 117,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "£240",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 38.4,
+      "vw": 5,
+      "font": "Geist Mono",
+      "weight": 400,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.11,
+      "top": 292,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Made to order, on the frame",
+      "words": 6,
+      "chars": 27,
+      "lines": 1,
+      "size": 30.7,
+      "vw": 4,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1511,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MORE CLOTHING",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 46.1,
+      "vw": 6,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 2085,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Taanko",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 61.4,
+      "vw": 8,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 3246,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.51,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.43,
+       "mono": true
+      },
+      {
+       "family": "Instrument Serif",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      15,
+      16,
+      26,
+      31,
+      38,
+      46,
+      61,
+      69
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 16,
+      "leading": 1.75,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 56,
+     "max": {
+      "size": 69.1,
+      "vw": 9,
+      "font": "Geist",
+      "text": "Chain-Stitch Overshirt"
+     },
+     "monoShare": 0.43,
+     "monoProseShare": 0.43,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [
+      "SKIP TO CONTENT",
+      "BAG",
+      "0",
+      "← THE SHOP",
+      "TK-AW26-CL-04",
+      "INDIGO THREAD"
+     ],
+     "microLabels": 20,
+     "microLabelShare": 0.296,
+     "microSamples": [
+      "TK-AW26-CL-04",
+      "INDIGO THREAD",
+      "OVERSHIRT 04",
+      "SIZE",
+      "CATEGORY",
+      "CLOTHING"
+     ],
+     "upperShare": 0.48,
+     "centerShare": 0.04,
+     "smallText": 9
+    },
+    "eyebrows": [
+     {
+      "text": "OVERSHIRT 04",
+      "above": "Made to order, on the frame",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": true,
+      "size": 11,
+      "top": 1419
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f5f5dc",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.56,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ebe7ce",
+       "top": 495,
+       "hsl": {
+        "h": 52,
+        "s": 0.42,
+        "l": 0.86
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#844a34",
+       "share": 0.7
+      },
+      {
+       "color": "#915f4e",
+       "share": 0.19
+      },
+      {
+       "color": "#f5f5dc",
+       "share": 0.08
+      },
+      {
+       "color": "#b53da5",
+       "share": 0.01
+      },
+      {
+       "color": "#d32a40",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#844a34",
+      "hsl": {
+       "h": 17,
+       "s": 0.43,
+       "l": 0.36
+      },
+      "fg": "#f5f5dc"
+     },
+     "lowContrast": [
+      {
+       "text": "SELECT A SIZE",
+       "ratio": 3.3,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#f5f5dc",
+       "bg": "#ff334e"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 35,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 3,
+     "upper": 3,
+     "heroLabels": [
+      "SKIP TO CONTENT",
+      "BAG 0"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 10,
+     "hairlineSamples": [
+      "header.grid.border-b 768px",
+      "dl.mono.w-full 736px",
+      "div.grid.grid-cols-[1fr_auto] 736px",
+      "div.grid.grid-cols-[1fr_auto] 736px",
+      "div.grid.grid-cols-[1fr_auto] 736px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 2,
+     "roundedBoxes": 4,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 3,
+     "mediaRadius": 16,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.52
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono",
+     "instrument serif"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3630,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main#main.pt-[46px].md:pt-[50px]",
+      "tag": "main",
+      "top": 0,
+      "height": 3209,
+      "words": 69,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Chain-Stitch Overshirt",
+       "size": 69,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-line",
+      "tag": "footer",
+      "top": 3209,
+      "height": 421,
+      "words": 25,
+      "media": 0,
+      "middle": 242,
+      "heading": {
+       "text": "Taanko",
+       "size": 61,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "size": 69,
+      "top": 117,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 151,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.73,
+    0.3,
+    0.36,
+    0.33
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 0,
+    "transitions": 1,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2619,
+     "screens": 3.1,
+     "words": 106,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 2,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "rd7ybe0UgMSoS4c5qcBe2OEIBsY.webp",
+      "sqpF5doNREx0lIFgsHEBZ8KS6g.webp",
+      "hMJqoN9zq5KtuJS87g68qfuvWY.webp",
+      "oEDPtt9Kxi8fPaeYC2wNEDf8w.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "chars": 22,
+     "lines": 2,
+     "size": 44,
+     "vw": 11.3,
+     "font": "Geist",
+     "weight": 400,
+     "tracking": -0.045,
+     "leading": 0.86,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 117,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "CHAIN-STITCH OVERSHIRT",
+     "words": 2,
+     "lines": 2,
+     "size": 44,
+     "font": "Geist"
+    },
+    "headings": [
+     {
+      "text": "Taanko",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 22,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "words": 2,
+      "chars": 22,
+      "lines": 2,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.045,
+      "leading": 0.86,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 117,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "£240",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Geist Mono",
+      "weight": 400,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": true,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.16,
+      "top": 249,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Made to order, on the frame",
+      "words": 6,
+      "chars": 27,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 985,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MORE CLOTHING",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Geist",
+      "weight": 400,
+      "tracking": -0.04,
+      "leading": 0.9,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1553,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Taanko",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 48,
+      "vw": 12.3,
+      "font": "Instrument Serif",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2247,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Geist",
+       "share": 0.51,
+       "mono": false
+      },
+      {
+       "family": "Geist Mono",
+       "share": 0.43,
+       "mono": true
+      },
+      {
+       "family": "Instrument Serif",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      10,
+      11,
+      15,
+      16,
+      26,
+      28,
+      44,
+      48
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Geist",
+      "size": 16,
+      "leading": 1.75,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 48,
+      "vw": 12.3,
+      "font": "Instrument Serif",
+      "text": "Taanko"
+     },
+     "monoShare": 0.43,
+     "monoProseShare": 0.43,
+     "monoFamilies": [
+      "Geist Mono"
+     ],
+     "monoSamples": [
+      "SKIP TO CONTENT",
+      "BAG",
+      "0",
+      "← THE SHOP",
+      "TK-AW26-CL-04",
+      "INDIGO THREAD"
+     ],
+     "microLabels": 20,
+     "microLabelShare": 0.296,
+     "microSamples": [
+      "TK-AW26-CL-04",
+      "INDIGO THREAD",
+      "OVERSHIRT 04",
+      "SIZE",
+      "CATEGORY",
+      "CLOTHING"
+     ],
+     "upperShare": 0.48,
+     "centerShare": 0.04,
+     "smallText": 9
+    },
+    "eyebrows": [
+     {
+      "text": "OVERSHIRT 04",
+      "above": "Made to order, on the frame",
+      "upper": true,
+      "tracked": true,
+      "mono": true,
+      "pill": true,
+      "size": 11,
+      "top": 893
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f5f5dc",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.56,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ebe7ce",
+       "top": 441,
+       "hsl": {
+        "h": 52,
+        "s": 0.42,
+        "l": 0.86
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#844a34",
+       "share": 0.7
+      },
+      {
+       "color": "#915f4e",
+       "share": 0.19
+      },
+      {
+       "color": "#f5f5dc",
+       "share": 0.08
+      },
+      {
+       "color": "#b53da5",
+       "share": 0.01
+      },
+      {
+       "color": "#d32a40",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#844a34",
+      "hsl": {
+       "h": 17,
+       "s": 0.43,
+       "l": 0.36
+      },
+      "fg": "#f5f5dc"
+     },
+     "lowContrast": [
+      {
+       "text": "SELECT A SIZE",
+       "ratio": 3.3,
+       "need": 4.5,
+       "size": 11,
+       "fg": "#f5f5dc",
+       "bg": "#ff334e"
+      }
+     ]
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 35,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 3,
+     "upper": 3,
+     "heroLabels": [
+      "SKIP TO CONTENT",
+      "BAG 0"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 3,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+      "div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 10,
+     "hairlineSamples": [
+      "header.grid.border-b 390px",
+      "dl.mono.w-full 358px",
+      "div.grid.grid-cols-[1fr_auto] 358px",
+      "div.grid.grid-cols-[1fr_auto] 358px",
+      "div.grid.grid-cols-[1fr_auto] 358px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 2,
+     "roundedBoxes": 3,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.48
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "geist",
+     "geist mono",
+     "instrument serif"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2619,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "main#main.pt-[46px].md:pt-[50px]",
+      "tag": "main",
+      "top": 0,
+      "height": 2210,
+      "words": 69,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Chain-Stitch Overshirt",
+       "size": 44,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.border-t.border-line",
+      "tag": "footer",
+      "top": 2210,
+      "height": 409,
+      "words": 25,
+      "media": 0,
+      "middle": 36,
+      "heading": {
+       "text": "Taanko",
+       "size": 48,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "CHAIN-STITCH OVERSHIRT",
+      "size": 44,
+      "top": 117,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 98,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 5,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: Geist Mono — e.g. \"SKIP TO CONTENT\", \"AW26\", \"SHOP\", \"CUSTOM ORDER\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "20 tiny uppercase letter-spaced labels (e.g. \"TK-AW26-CL-04\", \"INDIGO THREAD\", \"OVERSHIRT 04\", \"SIZE\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "4 box-shadow(s) on elements at rest: a.mono.relative → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0 | div.aspect-[4/5].overflow-hidden → rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "11 thin rule(s)/divider line(s): header.grid.border-b 1440px | div.flex.items-stretch 702px | dl.mono.w-full 352px | div.grid.grid-cols-[1fr_auto] 352px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "width": 1440,
+   "message": "3 backdrop-blur surfaces.",
+   "fix": "One blurred sticky bar at most; glass cards are a tell.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #f5f5dc, text #f5f5dc).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "contrast",
+   "width": 1440,
+   "message": "Low-contrast text: \"SELECT A SIZE\" 3.3:1 needs 4.5:1",
+   "fix": "Darken or lighten the text colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (Geist, Geist Mono, Instrument Serif).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (10, 11, 15, 19, 26, 40, 52, 64, 104, 112).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "10 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Only 1 element(s) moved while the page loaded and scrolled.",
+   "fix": "Build the motion layer (SKILL.md step 9, references/motion.md): the signature move, an entrance for the parts of every section, feedback on every control, and one moving picture. Transform and opacity only, with a reduced-motion fallback."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 768,
+   "message": "1 eyebrow/kicker label(s) above headings: \"OVERSHIRT 04\" (pill) above \"Made to order, on the frame\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "name-only-title",
+   "width": 768,
+   "message": "The h1 is a bare name (\"CHAIN-STITCH OVERSHIRT\") and nothing else on the first screen says what this is.",
+   "fix": "Keep the name if it leads, and give the line under it (18px or more) the plain words: what it is, for whom, where or when. In the study of 97 Sites of the Day, first screens that named nothing lost usability and content points.",
+   "alsoAt": [
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\Hardikk\\OneDrive\\Desktop\\Taanko\\.taste-skill\\inspect\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

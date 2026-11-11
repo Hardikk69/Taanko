@@ -3,11 +3,10 @@ const COLS = [
     tone: 'text-coral-ink',
     head: 'SHOP',
     links: [
-      { label: 'Outerwear', href: '/shop?c=outerwear' },
-      { label: 'Knit', href: '/shop?c=knit' },
-      { label: 'Shirts', href: '/shop?c=shirts' },
-      { label: 'Trousers', href: '/shop?c=trousers' },
-      { label: 'Objects', href: '/shop?c=objects' },
+      { label: 'Clothing', href: '/shop?c=clothing' },
+      { label: 'Totes', href: '/shop?c=totes' },
+      { label: 'Purses', href: '/shop?c=purses' },
+      { label: 'Accessories', href: '/shop?c=accessories' },
     ],
   },
   {
@@ -15,6 +14,7 @@ const COLS = [
     head: 'INFO',
     links: [
       { label: 'About', href: '/about' },
+      { label: 'Journal', href: '/journal' },
       { label: 'Shipping', href: '/shipping' },
       { label: 'Returns', href: '/returns' },
     ],
@@ -43,7 +43,7 @@ export default function Footer() {
           <p className="mb-2.5 font-serif text-[clamp(48px,8vw,112px)] leading-[0.92] font-normal tracking-[-0.02em]">
             Taanko
           </p>
-          <p className="mono text-muted">AUTUMN / WINTER 2026</p>
+          <p className="mono text-muted">HAND-EMBROIDERY HOUSE</p>
         </div>
 
         <div className="flex flex-none flex-wrap gap-8 md:flex-nowrap md:gap-14">

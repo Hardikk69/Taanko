@@ -1,4 +1,4 @@
-export type Tone = 'charcoal' | 'bone' | 'stone' | 'olive' | 'black' | 'oatmeal' | 'ash'
+export type Tone = 'indigo' | 'bone' | 'madder' | 'olive' | 'ink' | 'oatmeal' | 'saffron'
 
 export type Product = {
   slug: string
@@ -15,18 +15,18 @@ export type Product = {
   image: string
 }
 
+// Thread tones — the dyed-floss colours the pieces are embroidered in.
 export const toneSwatch: Record<Tone, string> = {
-  charcoal: '#383634',
+  indigo: '#33425C',
   bone: '#E5E1D8',
-  stone: '#B5AEA3',
+  madder: '#9E3B36',
   olive: '#5A634E',
-  black: '#1D1C1A',
+  ink: '#1D1C1A',
   oatmeal: '#DDD7C7',
-  ash: '#969288',
+  saffron: '#C98A2B',
 }
 
 const CLOTHING = 'XS,S,M,L,XL'
-const TROUSER = '44,46,48,50,52'
 const ONE = 'ONE SIZE'
 
 const p = (
@@ -57,42 +57,44 @@ const p = (
   image: '/images/' + image,
 })
 
+// Slugs are kept stable so the lookbook hotspots and /product pages resolve.
+// Every piece is hand-embroidered; the tone is the lead thread colour.
 export const products: Product[] = [
-  p('raw-wool-coat', 'Raw Wool Coat', 'TK-AW26-OW-04', 'outerwear', 420, 'Charcoal', 'charcoal', 'WOOL COAT 04', CLOTHING, 'XS',
-    'A long straight coat in brushed raw wool. Dropped shoulder, concealed placket, no lining at the back to let it move.',
+  p('raw-wool-coat', 'Chain-Stitch Overshirt', 'TK-CL-04', 'clothing', 240, 'Indigo', 'indigo', 'OVERSHIRT 04', CLOTHING, 'XS',
+    'A boxy overshirt in washed cotton, run with a chain-stitch field across the back yoke. Each one takes a full day on the frame.',
     'rd7ybe0UgMSoS4c5qcBe2OEIBsY.webp'),
-  p('long-coat-01', 'Long Coat 01', 'TK-AW26-OW-01', 'outerwear', 480, 'Ash', 'ash', 'LONG COAT 01', CLOTHING, '',
-    'Single breasted, ankle length, cut in a bone grey wool twill. Quiet from the front, severe in motion.',
+  p('long-coat-01', 'Satin-Stitch Jacket', 'TK-CL-01', 'clothing', 320, 'Bone', 'bone', 'JACKET 01', CLOTHING, '',
+    'A long unlined jacket in bone cotton twill, the lapel and cuffs filled in dense satin stitch. Quiet until it moves.',
     'sqpF5doNREx0lIFgsHEBZ8KS6g.webp'),
-  p('work-jacket-02', 'Work Jacket 02', 'TK-AW26-OW-02', 'outerwear', 310, 'Olive Grey', 'olive', 'WORK JACKET 02', CLOTHING, 'XL',
-    'A boxy short jacket in washed canvas with four patch pockets. Built for use, kept strict.',
+  p('work-jacket-02', 'Sashiko Work Jacket', 'TK-CL-02', 'clothing', 285, 'Olive', 'olive', 'WORK JACKET 02', CLOTHING, 'XL',
+    'A short boxy jacket in olive canvas, reinforced with running sashiko across both panels. Built to be mended, not replaced.',
     'hMJqoN9zq5KtuJS87g68qfuvWY.webp'),
-  p('soft-knit-02', 'Soft Knit 02', 'TK-AW26-KN-02', 'knit', 190, 'Oatmeal', 'oatmeal', 'SOFT KNIT 02', CLOTHING, '',
-    'A heavy rib mock neck in brushed alpaca blend. Oversized through the body, narrow at the cuff.',
+  p('soft-knit-02', 'Grand Tote', 'TK-TB-02', 'totes', 110, 'Oatmeal', 'oatmeal', 'GRAND TOTE 02', ONE, '',
+    'A heavy oatmeal canvas tote with a full hand-embroidered panel and webbing handles. Holds the week without complaint.',
     'ufrlu9H9Q5CdndAcmitVcLjMXiU.webp'),
-  p('rib-knit-vest', 'Rib Knit Vest', 'TK-AW26-KN-05', 'knit', 140, 'Stone', 'stone', 'KNIT VEST 05', CLOTHING, '',
-    'A sleeveless chunky rib in stone wool. Layer it over a shirt or wear it alone.',
+  p('rib-knit-vest', 'Market Tote', 'TK-TB-05', 'totes', 78, 'Madder', 'madder', 'MARKET TOTE 05', ONE, '',
+    'A flat everyday tote in bone cotton, the madder motif stitched low on the front. Folds down to nothing.',
     'LSdninF0aui4WTj2K5BbDuqwB6s.webp'),
-  p('structured-shirt', 'Structured Shirt', 'TK-AW26-SH-03', 'shirts', 165, 'Bone', 'bone', 'SHIRT 03', CLOTHING, 'XS,S',
-    'A stiff poplin shirt with an oversized collar and a high, straight hem.',
+  p('structured-shirt', 'Embroidered Shirt', 'TK-CL-03', 'clothing', 165, 'Bone', 'bone', 'SHIRT 03', CLOTHING, 'XS,S',
+    'A stiff poplin shirt with an oversized collar and a small stitched crest at the chest. A high, straight hem.',
     'oEDPtt9Kxi8fPaeYC2wNEDf8w.webp'),
-  p('layered-tee', 'Layered Tee', 'TK-AW26-SH-06', 'shirts', 85, 'Washed Grey', 'ash', 'LAYERED TEE 06', CLOTHING, '',
-    'Washed jersey with a second, longer black layer sewn into the hem.',
+  p('layered-tee', 'Stitched Cap', 'TK-AC-06', 'accessories', 48, 'Ink', 'ink', 'CAP 06', ONE, '',
+    'A washed six-panel cap with the house mark hand-stitched above the brim. One adjustable strap at the back.',
     '3eB2nkAdp2WJs1DwpVF6ievuPs.webp'),
-  p('fold-trouser', 'Fold Trouser', 'TK-AW26-TR-01', 'trousers', 210, 'Off-black', 'black', 'FOLD TROUSER 01', TROUSER, '44',
-    'A wide trouser with a double fold at the front and a deep break. Falls straight from the hip.',
+  p('fold-trouser', 'Coin Purse', 'TK-PU-01', 'purses', 42, 'Ink', 'ink', 'COIN PURSE 01', ONE, '',
+    'A small zip purse in off-black cotton with a single embroidered line. Cards, coins, a key — nothing more.',
     '6YDakt7k90BRrRTGKGxlXWmaUrE.webp'),
-  p('wide-trouser-03', 'Wide Trouser 03', 'TK-AW26-TR-03', 'trousers', 230, 'Charcoal', 'charcoal', 'WIDE TROUSER 03', TROUSER, '',
-    'Charcoal flannel, cut wide with one deep pleat. Sits high, finishes on the shoe.',
+  p('wide-trouser-03', 'Folded Clutch', 'TK-PU-03', 'purses', 96, 'Indigo', 'indigo', 'CLUTCH 03', ONE, '',
+    'A soft fold-over clutch in indigo canvas, the front worked edge to edge in tight cross-stitch.',
     'ls9gxYgRiy1Hiq98dM90w8aEh1A.webp'),
-  p('utility-bag', 'Utility Bag', 'TK-AW26-OB-01', 'objects', 175, 'Black', 'black', 'UTILITY BAG', ONE, '',
-    'A technical nylon carry piece with a webbing strap, one steel buckle and nothing else.',
+  p('utility-bag', 'Crossbody Pouch', 'TK-PU-01B', 'purses', 88, 'Ink', 'ink', 'CROSSBODY POUCH', ONE, '',
+    'A small canvas pouch on a webbing strap, one steel buckle, the flap stitched with a running border.',
     'OKd8mJSKFTxBiTC1jrqu8FbzcI.webp'),
-  p('leather-object-03', 'Leather Object 03', 'TK-AW26-OB-03', 'objects', 260, 'Black', 'black', 'LEATHER OBJECT 03', ONE, '',
-    'A folded leather pouch that works as a bag, a case, or an object on a table.',
+  p('leather-object-03', 'Embroidered Patch Set', 'TK-AC-03', 'accessories', 28, 'Saffron', 'saffron', 'PATCH SET 03', ONE, '',
+    'Three iron-on patches worked in saffron and madder floss. Mend a hole or mark a jacket as yours.',
     'tgfGQWKNsqq9YlmBt49dS7UNA.webp'),
-  p('heavy-scarf-01', 'Heavy Scarf 01', 'TK-AW26-OB-05', 'objects', 120, 'Charcoal', 'charcoal', 'SCARF 01', ONE, '',
-    'Two metres of dense brushed wool. Wrap it once and let it hang.',
+  p('heavy-scarf-01', 'Embroidered Scarf', 'TK-AC-05', 'accessories', 72, 'Madder', 'madder', 'SCARF 05', ONE, '',
+    'Two metres of soft brushed cotton with a hand-run border down each long edge. Wrap it once and let it hang.',
     'zTL04fG9Tj01W6ibwj5h2NLagk.webp'),
 ]
 
@@ -129,38 +131,69 @@ const look = (
 ): Look => ({ id, title: [l1, l2], note, lead, image: '/images/' + image, hotspots: hs(spots) })
 
 export const looks: Look[] = [
-  look(1, 'Raw wool,', 'held at the shoulder',
-    'The opening look. A coat that keeps its weight, over a soft rib and a wide fold.',
+  look(1, 'Chain stitch,', 'held at the shoulder',
+    'The opening look. A hand-worked overshirt carried with the grand tote and a coin purse.',
     'raw-wool-coat', '1fdmffvXEbZby1Mv5OamwJ4XtRg.webp',
     'raw-wool-coat:27:52\nsoft-knit-02:50:31\nfold-trouser:52:76'),
   look(2, 'Long line,', 'no ceremony',
-    'Bone grey to the ankle. A plain layered tee underneath and a bag with one buckle.',
+    'The satin-stitch jacket worn open, a stitched cap above and a crossbody pouch slung low.',
     'long-coat-01', 'TyYDFFCaO3yv8nezVk3y41E4LY.webp',
     'long-coat-01:30:46\nlayered-tee:50:30\nutility-bag:43:68\nwide-trouser-03:55:82'),
   look(3, 'One shirt,', 'built like a wall',
-    'Stiff poplin, oversized collar, nothing tucked. The trousers do the rest.',
+    'Stiff poplin, oversized collar, a small crest at the chest. The clutch does the rest.',
     'structured-shirt', '6XqttJer8B2ltisVVXJR9idkf0.webp',
     'structured-shirt:45:26\nfold-trouser:47:66'),
   look(4, 'Work jacket,', 'side on',
-    'Washed canvas cut short and boxy, a bag across the body, a narrow leg below.',
+    'Sashiko canvas cut short and boxy, a crossbody pouch across the body, a clutch in hand.',
     'work-jacket-02', 'DSvpP5V90ORu75jurPjvvU2cOPY.webp',
     'work-jacket-02:42:24\nutility-bag:30:39\nwide-trouser-03:50:66'),
-  look(5, 'Rib over black,', 'stone on charcoal',
-    'A sleeveless knit pulled over black layers. Everything stays flat and hard.',
+  look(5, 'Madder on bone,', 'the market tote',
+    'The market tote carried against the clutch. Two reds, one stitched flat and hard.',
     'rib-knit-vest', 'ZptDcON6Y8ZOTm6gwDcVQG0XDS4.webp',
     'rib-knit-vest:46:24\nwide-trouser-03:45:66'),
-  look(6, 'Two tees,', 'one long scarf',
-    'Grey over black jersey. A scarf that is nearly as long as the trouser.',
+  look(6, 'Cap and scarf,', 'one long border',
+    'The stitched cap with the embroidered scarf. A border nearly as long as the strap.',
     'layered-tee', 'XPA7VyYC6IYxNuIzqK0TjYKfzwQ.webp',
     'layered-tee:30:26\nheavy-scarf-01:57:40\nfold-trouser:46:70'),
-  look(7, 'Closed coat,', 'one small object',
-    'The long coat buttoned to the neck, and a folded leather object held low.',
+  look(7, 'Closed jacket,', 'one small purse',
+    'The satin-stitch jacket buttoned to the neck, a patch set held low.',
     'long-coat-01', '5bbO54H051cgniE6n9BVlmXbfTc.webp',
     'long-coat-01:40:34\nleather-object-03:31:50'),
-  look(8, 'All black,', 'hard light',
-    'Knit, pleat and scarf in one tone. The closing look of the collection.',
+  look(8, 'All thread,', 'hard light',
+    'Tote, purse and scarf in one dye lot. The closing look of the collection.',
     'heavy-scarf-01', 'A5W6arKPcC32pUUvT8NVRtFvE4.webp',
     'heavy-scarf-01:36:36\nsoft-knit-02:53:40\nfold-trouser:50:80'),
 ]
 
 export const money = (n: number) => '£' + n
+
+export type Post = {
+  slug: string
+  no: string
+  date: string
+  kind: string
+  title: string
+  lead: string
+  /** Each string is one paragraph. */
+  body: string[]
+}
+
+// Founder's Journal — the story, notes and letters behind the house.
+// Add a new entry at the TOP of this array; it carries its own number.
+export const posts: Post[] = [
+  {
+    slug: 'why-taanko',
+    no: '01',
+    date: '2026 / 11',
+    kind: 'STORY',
+    title: 'Why Taanko',
+    lead: 'The name means to stitch with thread. This is where that started.',
+    body: [
+      'I keep coming back to the needle. Taanko — to stitch with thread — is the only word that holds everything I wanted this house to be: slow, made by hand, and honest about the time it takes.',
+      'This journal is mine to keep. The story of the first pieces, the mistakes on the frame, the people who taught me, and the letters I want to write to whoever is reading. No schedule. I post when there is something true to say.',
+      'Thank you for being here early.',
+    ],
+  },
+]
+
+export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug)

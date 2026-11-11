@@ -101,7 +101,7 @@ export default function Runway() {
     <section
       className="relative isolate h-auto min-h-0 w-full overflow-hidden bg-ink text-bone [--gap:40px] [--pd-w:420px] [--rail-x:352px] [--slide-w:min(46vw,420px)] md:h-[calc(100svh-50px)] md:min-h-[560px] lg:[--gap:76px] lg:[--rail-x:43%] lg:[--slide-w:min(32vw,480px)]"
       aria-roledescription="carousel"
-      aria-label="AW26 runway"
+      aria-label="Collection runway"
       role="region"
     >
       <div
@@ -450,7 +450,7 @@ function Drawer({
       </header>
 
       <div className="flex-1 overflow-y-auto px-4 pt-3.5 pb-3 md:px-6 md:pt-5 md:pb-6">
-        <div className="relative mb-[22px] aspect-[5/4] overflow-hidden border border-line bg-surface">
+        <div className="relative mb-[22px] aspect-[5/4] overflow-hidden rounded-lg border border-line bg-surface shadow-soft">
           <img
             src={product.image}
             alt={product.name}
@@ -493,7 +493,7 @@ function Drawer({
                   key={s}
                   type="button"
                   className={
-                    'min-h-11 min-w-11 border px-3.5 font-mono text-xs tracking-[0.06em] transition-[background-color,color,border-color,opacity] duration-400 ease-sf disabled:cursor-not-allowed disabled:line-through disabled:opacity-35 enabled:hover:border-bone enabled:hover:bg-bone-12 enabled:active:opacity-70 ' +
+                    'min-h-11 min-w-11 rounded-md border px-3.5 font-mono text-xs tracking-[0.06em] transition-[background-color,color,border-color,opacity] duration-400 ease-sf disabled:cursor-not-allowed disabled:line-through disabled:opacity-35 enabled:hover:border-bone enabled:hover:bg-bone-12 enabled:active:opacity-70 ' +
                     (size === s ? 'border-bone bg-bone text-ink' : 'border-line-strong')
                   }
                   disabled={out}
@@ -555,7 +555,7 @@ function Drawer({
       <footer className="grid gap-1 border-t border-line px-4 pt-2.5 pb-[calc(10px+env(safe-area-inset-bottom))] md:px-6 md:pt-3.5 md:pb-[18px]">
         <button
           type="button"
-          className='relative isolate flex min-h-11 w-full items-center justify-between gap-[18px] overflow-hidden border border-bone bg-bone px-[18px] font-mono text-xs tracking-[0.08em] text-ink uppercase transition-[color,opacity] duration-500 ease-sf before:absolute before:inset-0 before:-z-10 before:translate-y-[101%] before:bg-ink before:transition-transform before:duration-[550ms] before:ease-sf before:content-[""] disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:text-bone enabled:hover:before:translate-y-0 enabled:active:opacity-[0.78]'
+          className='relative isolate flex min-h-11 w-full items-center justify-between gap-[18px] overflow-hidden rounded-full border border-bone bg-bone px-5 font-mono text-xs tracking-[0.08em] text-ink uppercase transition-[color,opacity] duration-500 ease-sf before:absolute before:inset-0 before:-z-10 before:translate-y-[101%] before:bg-ink before:transition-transform before:duration-[550ms] before:ease-sf before:content-[""] disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:text-bone enabled:hover:before:translate-y-0 enabled:active:opacity-[0.78]'
           disabled={!size}
         >
           <span>{size ? 'ADD TO BAG' : 'SELECT A SIZE'}</span>

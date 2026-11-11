@@ -1,6 +1,10 @@
+import About from './pages/About'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
+import CustomOrder from './pages/CustomOrder'
 import Home from './pages/Home'
+import Journal from './pages/Journal'
+import Product from './pages/Product'
 import Shopping from './pages/Shopping'
 
 export default function App() {
@@ -20,7 +24,19 @@ export default function App() {
       <Nav />
 
       <main id="main" className="pt-[46px] md:pt-[50px]">
-        {path === '/shop' ? <Shopping /> : <Home />}
+        {path === '/shop' ? (
+          <Shopping />
+        ) : path.startsWith('/product') ? (
+          <Product />
+        ) : path.startsWith('/journal') ? (
+          <Journal />
+        ) : path.startsWith('/about') ? (
+          <About />
+        ) : path.startsWith('/lookbook') ? (
+          <CustomOrder />
+        ) : (
+          <Home />
+        )}
       </main>
 
       <Footer />

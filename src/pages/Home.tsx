@@ -1,6 +1,7 @@
 import Editorial from '../components/Editorial'
 import Hero from '../components/Hero'
 import Runway from '../components/Runway'
+import Stitch from '../components/Stitch'
 import { products } from '../data'
 
 export default function Home() {
@@ -8,12 +9,16 @@ export default function Home() {
     <>
       <Hero />
 
+      <Stitch tone="coral" />
+
       <Runway />
+
+      <Stitch tone="green" />
 
       <section className="px-4 pt-10 pb-12 md:px-9 md:pt-18 md:pb-20" aria-labelledby="index-head">
         <div className="flex items-baseline justify-between gap-4 border-b border-line pb-3.5">
           <h2 id="index-head" className="mono text-coral-ink">
-            AW26 INDEX / {String(products.length).padStart(2, '0')} PIECES
+            INDEX / {String(products.length).padStart(2, '0')} PIECES
           </h2>
           <a
             href="/shop"
@@ -27,7 +32,7 @@ export default function Home() {
           {products.map((p) => (
             <li key={p.slug}>
               <a className="group grid gap-1.5" href={`/product/${p.slug}`}>
-                <div className="relative mb-1.5 aspect-[4/5] overflow-hidden bg-surface">
+                <div className="relative mb-1.5 aspect-[4/5] overflow-hidden rounded-lg bg-surface shadow-soft transition-shadow duration-500 ease-sf group-hover:shadow-lift">
                   <img
                     src={p.image}
                     alt={p.name}
@@ -48,6 +53,8 @@ export default function Home() {
           ))}
         </ul>
       </section>
+
+      <Stitch tone="pink" />
 
       <Editorial />
     </>

@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react'
 import { looks, products } from '../data'
+import RollButton from './RollButton'
 
 type Img = { src: string; alt: string }
 
@@ -6,48 +8,90 @@ export type EditorialProps = {
   collageEyebrow?: string
   collageTitle?: string
   collage?: [Img, Img, Img, Img, Img]
-  featureImage?: Img
-  featureEyebrow?: string
   featureTitle?: string
-  featureBody?: string
   featureCta?: string
   outroEyebrow?: string
   outroTitle?: string
 }
 
 const DEFAULT_COLLAGE: [Img, Img, Img, Img, Img] = [
-  { src: looks[1].image, alt: 'Long coat in bone grey wool twill, shot full length' },
-  { src: products[3].image, alt: 'Heavy rib mock neck knit in brushed alpaca blend' },
-  { src: looks[4].image, alt: 'Stone rib knit vest layered over black' },
-  { src: looks[3].image, alt: 'Washed canvas work jacket worn side on' },
-  { src: products[11].image, alt: 'Two metres of dense brushed wool scarf' },
+  { src: looks[1].image, alt: 'Satin-stitch jacket in bone cotton twill, shot full length' },
+  { src: products[3].image, alt: 'Grand tote in oatmeal canvas with a hand-embroidered panel' },
+  { src: looks[4].image, alt: 'Madder market tote carried against a clutch' },
+  { src: looks[3].image, alt: 'Sashiko work jacket worn side on' },
+  { src: products[10].image, alt: 'Embroidered scarf with a hand-run border' },
 ]
 
-/** Dark pill with a circular arrow knob, as in the reference. */
-function PillCta({ label, href }: { label: string; href: string }) {
+/**
+ * Horizontal scroll gallery. The block is made as tall as the row is wide, its
+ * stage pins, and the row of looks slides left as the page scrolls down
+ * (.hs-* in index.css). The script only measures how far the row must travel.
+ * Without scroll timelines, or with reduced motion, the row is a swipeable strip.
+ */
+function LookGallery({ title, body, cta }: { title: string; body: string; cta: string }) {
+  const section = useRef<HTMLDivElement>(null)
+  const view = useRef<HTMLDivElement>(null)
+  const track = useRef<HTMLUListElement>(null)
+
+  useEffect(() => {
+    const measure = () => {
+      if (!section.current || !view.current || !track.current) return
+      const dist = Math.max(0, track.current.scrollWidth - view.current.clientWidth)
+      section.current.style.setProperty('--hs-dist', dist + 'px')
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    if (view.current) ro.observe(view.current)
+    if (track.current) ro.observe(track.current)
+    return () => ro.disconnect()
+  }, [])
+
   return (
-    <a
-      href={href}
-      className="group inline-flex items-center gap-3 rounded-full bg-coral-ink py-1.5 pr-1.5 pl-5 text-ink transition-colors duration-300 ease-sf hover:bg-bone focus-visible:bg-bone"
-    >
-      <span className="mono">{label}</span>
-      <span className="grid size-8 place-items-center rounded-full bg-ink text-bone transition-transform duration-500 ease-sf group-hover:translate-x-1">
-        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path
-            d="M2 7h10M8 3l4 4-4 4"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="square"
-          />
-        </svg>
-      </span>
-    </a>
+    <div ref={section} className="hs -mx-4 mt-24 md:-mx-9 md:mt-36">
+      <div className="hs-pin flex h-[100svh] min-h-[560px] flex-col justify-center gap-8 pt-16 md:flex-row md:items-center md:gap-0 md:pt-14">
+        <div className="px-4 md:w-[34%] md:flex-none md:px-9">
+          <h3 className="reveal font-serif text-[clamp(44px,5.6vw,96px)] leading-[0.92] font-normal tracking-[-0.035em] text-bone">
+            {title}
+          </h3>
+          <p className="reveal mt-5 max-w-[36ch] text-[16px] leading-[1.6] text-bone md:mt-8 md:text-[17px]">{body}</p>
+          <div className="reveal mt-6 md:mt-10">
+            <RollButton href="/shop">{cta}</RollButton>
+          </div>
+        </div>
+
+        <div ref={view} className="hs-view min-w-0 flex-1">
+          <ul ref={track} className="hs-track flex w-max gap-3 px-4 md:gap-5 md:pr-9 md:pl-0">
+            {looks.map((look) => (
+              <li key={look.id} className="flex-none">
+                <a href={`/product/${look.lead}`} className="group block">
+                  <div className="aspect-[2/3] h-[40svh] overflow-hidden rounded-[18px] bg-surface md:h-[66svh]">
+                    <img
+                      src={look.image}
+                      alt={`Look ${look.id}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] ease-sf group-hover:scale-[1.05]"
+                    />
+                  </div>
+                  <div className="mt-3 flex items-baseline justify-between gap-4 text-[14px]">
+                    <span className="text-bone">Look {String(look.id).padStart(2, '0')}</span>
+                    <span className="text-muted transition-colors duration-300 ease-sf group-hover:text-bone">
+                      Shop the look →
+                    </span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 
 function Frame({ image, className }: { image: Img; className?: string }) {
   return (
-    <div className={'overflow-hidden bg-surface ' + (className ?? '')}>
+    <div className={'overflow-hidden rounded-lg bg-surface shadow-soft ' + (className ?? '')}>
       <img
         src={image.src}
         alt={image.alt}
@@ -61,23 +105,17 @@ function Frame({ image, className }: { image: Img; className?: string }) {
 
 export default function Editorial({
   collageEyebrow = 'an edit of',
-  collageTitle = 'CLOTH AND WEIGHT',
+  collageTitle = 'THREAD AND HAND',
   collage = DEFAULT_COLLAGE,
-  featureImage = {
-    src: looks[0].image,
-    alt: 'Raw wool coat held at the shoulder, the opening look of AW26',
-  },
-  featureEyebrow = 'designed',
-  featureTitle = 'WITH INTENTION',
-  featureBody = 'Twelve pieces cut in raw wool, washed canvas and heavy rib. Each run is small, restocked only when the cloth allows, and built to be worn hard rather than kept aside.',
-  featureCta = 'VIEW THE COLLECTION',
+  featureTitle = 'Made with intention.',
+  featureCta = 'View the collection',
   outroEyebrow = 'born from',
   outroTitle = 'THE WORKROOM',
 }: EditorialProps) {
   return (
     <section className="bg-ink px-4 pt-10 pb-14 md:px-9 md:pt-16 md:pb-24" aria-labelledby="editorial-title">
       <div className="flex items-end justify-between gap-6 border-b border-line pb-3">
-        <span className="mono text-coral-ink">AW26 / EDITORIAL</span>
+        <span className="mono text-coral-ink">TAANKO / EDITORIAL</span>
         <span className="mono text-green-ink">PLATE 01—05</span>
       </div>
 
@@ -110,27 +148,12 @@ export default function Editorial({
         </div>
       </div>
 
-      {/* Feature: image left, copy right. */}
-      <div className="mt-14 grid items-center gap-6 md:mt-24 md:grid-cols-[1.25fr_1fr] md:gap-12">
-        <Frame image={featureImage} className="aspect-[4/5] md:aspect-[5/6]" />
-
-        {/* Everything in this column shares one right-hand axis. */}
-        <div className="md:pr-6 md:text-right">
-          <p className="font-serif text-[clamp(26px,4.6vw,54px)] leading-none font-normal tracking-[-0.01em] text-green-ink italic">
-            {featureEyebrow}
-          </p>
-          <h3 className="-mt-[0.08em] text-[clamp(22px,6vw,40px)] leading-[0.95] font-normal tracking-[-0.03em] text-bone uppercase">
-            {featureTitle}
-          </h3>
-          <span className="mt-6 block h-px w-14 bg-coral md:ml-auto" aria-hidden="true" />
-          <p className="mt-6 max-w-[46ch] text-[15px] leading-[1.75] text-muted md:ml-auto">
-            {featureBody}
-          </p>
-          <div className="mt-8 flex md:justify-end">
-            <PillCta label={featureCta} href="/shop" />
-          </div>
-        </div>
-      </div>
+      {/* Feature: pinned headline with the looks gliding sideways past it. */}
+      <LookGallery
+        title={featureTitle}
+        body={`${products.length} pieces — clothing, totes, purses and small objects — each hand-embroidered, made in small numbers and built to be worn hard.`}
+        cta={featureCta}
+      />
 
       {/* Outro line closing the section. */}
       <div className="mt-20 text-center md:mt-32">
